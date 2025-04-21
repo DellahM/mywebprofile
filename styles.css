@@ -208,6 +208,16 @@ p {
 }
 
 /* Hero Section */
+
+.tech-icons img {
+    transition: transform 0.3s ease;
+    margin: 0 10px;
+  }
+  
+  .tech-icons img:hover {
+    transform: scale(1.1);
+  }
+
 .hero {
     padding: 5rem 0;
     background-color: var(--muted);
