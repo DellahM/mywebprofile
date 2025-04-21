@@ -129,3 +129,11 @@ window.addEventListener('scroll', revealOnScroll);
 
 // Trigger once on load
 window.addEventListener('load', revealOnScroll);
+
+
+const skills = {
+    core: ["HTML5", "CSS3/Sass", "JavaScript (ES6+)", "PHP"],
+    WordPress: ["Custom Themes", "WooCommerce", "WP Rocket", "Security Hardening"],
+    modern: ["React (Learning)", "Next.js Basics", "REST APIs", "Git/GitHub"],
+    design: ["Figma", "Adobe XD", "UI/UX Principles"]
+  };
