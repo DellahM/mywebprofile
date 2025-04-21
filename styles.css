@@ -211,7 +211,11 @@ p {
 
 .tech-icons img {
     transition: transform 0.3s ease;
-    margin: 0 10px;
+    width: 30px !important; 
+    height: auto !important;
+    margin: 0 8px !important;
+
+
   }
   
   .tech-icons img:hover {
