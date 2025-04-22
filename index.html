@@ -8,6 +8,8 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 <body>
     <!-- Header -->
@@ -79,50 +81,131 @@
 
         <!-- About Section -->
         <section id="about" class="about">
+            
             <div class="container">
                 <div class="section-header">
-                    <span class="section-tag">About Me</span>
-                    <h2>Get to know me</h2>
-                    <p> I specialize in crafting user-friendly websites that combine the flexibility of WordPress with modern development practices:
+                    <span class="section-tag" style="background: var(--muted); color: var(--muted-foreground);">About Me</span>
+                    <h2 style="color: var(--foreground);">Get to Know Me</h2>
+                    
 
-                        🖥️ WordPress Development: Custom themes, WooCommerce, and page builder optimization (Elementor, Divi)
-                        
-                        ⚛️ Modern Front-End: Transitioning to React/Next.js for dynamic UIs (currently building projects!)
-                        
-                        🛠️ Full Workflow: Design (Figma) → WordPress backend → Front-end interactivity (JavaScript/React)
-                        
-                        🚀 Performance: Optimizing WordPress sites for speed (caching, image optimization, CDNs)
-                        
-                        Why me? I merge WordPress’s ease-of-use with clean, maintainable code – no bloated plugins!
-                        
-                                   </p>
+<!-- About Me Content -->
+<div class="about-grid" style="margin-top: 2rem;">
+    <!-- Left Column -->
+    <div class="about-column">
+        <div class="card" style="background: rgba(var(--primary-rgb), 0.05); backdrop-filter: blur(8px); border: 1px solid rgba(var(--primary-rgb), 0.1);">
+            <h3 style="color: var(--foreground); border-left: 4px solid var(--primary); padding-left: 1rem;">
+                <i class="fas fa-tools" style="color: var(--primary);"></i> Core Expertise
+            </h3>
+            <ul class="styled-list" style="color: var(--foreground);">
+                <li><i class="fas fa-palette" style="color: var(--muted-foreground);"></i> Custom WordPress themes</li>
+                <li><i class="fas fa-cart-plus" style="color: var(--muted-foreground);"></i> WooCommerce optimization</li>
+                <li><i class="fas fa-tachometer-alt" style="color: var(--muted-foreground);"></i> Performance tuning</li>
+                <li><i class="fas fa-mobile-alt" style="color: var(--muted-foreground);"></i> Responsive design</li>
+            </ul>
+        </div>
 
-                                  
+        <div class="card" style="background: rgba(var(--primary-hover-rgb), 0.05); backdrop-filter: blur(8px); border: 1px solid rgba(var(--primary-hover-rgb), 0.1); margin-top: 1.5rem;">
+            <h3 style="color: var(--foreground); border-left: 4px solid var(--primary-hover); padding-left: 1rem;">
+                <i class="fas fa-seedling" style="color: var(--primary-hover);"></i> Current Focus
+            </h3>
+            <ul class="styled-list" style="color: var(--foreground);">
+                <li><i class="fab fa-react" style="color: var(--muted-foreground);"></i> React state management</li>
+                <li><i class="fas fa-project-diagram" style="color: var(--muted-foreground);"></i> Headless WordPress</li>
+                <li><i class="fas fa-code" style="color: var(--muted-foreground);"></i> TypeScript fundamentals</li>
+            </ul>
+        </div>
+    </div>
 
-
-
-
+    <!-- Right Column -->
+    <div class="about-column">
+        <div class="card" style="background: rgba(var(--primary-rgb), 0.05); backdrop-filter: blur(8px); border: 1px solid rgba(var(--primary-rgb), 0.1);">
+            <h3 style="color: var(--foreground); border-left: 4px solid var(--primary); padding-left: 1rem;">
+                <i class="fas fa-star" style="color: var(--primary);"></i> Why Choose Me?
+            </h3>
+            <div class="highlight-list">
+                <div class="highlight-item" style="border-bottom: 1px solid rgba(var(--primary-rgb), 0.1); padding: 1rem 0;">
+                    <i class="fas fa-bridge" style="color: var(--primary);"></i>
+                    <p style="color: var(--foreground);">Merge WordPress CMS with modern JavaScript</p>
                 </div>
-                <div class="about-content">
-                    <div class="about-text">
-                        <div class="about-item">
-                            <h3>Background</h3>
-                            <p>I have a background in Computer Science and have worked with various companies ranging from startups to large enterprises. This diverse experience has given me a unique perspective on how to approach different projects.</p>
+                <div class="highlight-item" style="border-bottom: 1px solid rgba(var(--primary-rgb), 0.1); padding: 1rem 0;">
+                    <i class="fas fa-comments" style="color: var(--primary);"></i>
+                    <p style="color: var(--foreground);">Jargon-free communication</p>
+                </div>
+                <div class="highlight-item" style="padding: 1rem 0;">
+                    <i class="fas fa-bug" style="color: var(--primary);"></i>
+                    <p style="color: var(--foreground);">Obsessive debugging & optimization</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Technical Toolbox -->
+<div class="card" style="background: rgba(var(--primary-rgb), 0.05); backdrop-filter: blur(8px); border: 1px solid rgba(var(--primary-rgb), 0.1); margin-top: 2rem;">
+    <h3 style="color: var(--foreground); border-left: 4px solid var(--primary); padding-left: 1rem;">
+        <i class="fas fa-toolbox" style="color: var(--primary);"></i> Technical Toolbox
+    </h3>
+
+
+                   
+                        <div class="tech-tags" style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem;">
+                            <span style="background: rgba(var(--primary-rgb), 0.1); color: var(--primary); padding: 0.5rem 1rem; border-radius: var(--radius); border: 1px solid rgba(var(--primary-rgb), 0.2);">HTML5</span>
+                            <span style="background: rgba(var(--primary-rgb), 0.1); color: var(--primary); padding: 0.5rem 1rem; border-radius: var(--radius); border: 1px solid rgba(var(--primary-rgb), 0.2);">CSS3/Sass</span>
+                            <span style="background: rgba(var(--primary-rgb), 0.1); color: var(--primary); padding: 0.5rem 1rem; border-radius: var(--radius); border: 1px solid rgba(var(--primary-rgb), 0.2);">JavaScript</span>
+                            <span style="background: rgba(var(--primary-rgb), 0.1); color: var(--primary); padding: 0.5rem 1rem; border-radius: var(--radius); border: 1px solid rgba(var(--primary-rgb), 0.2);">PHP</span>
+                            <span style="background: rgba(var(--primary-hover-rgb), 0.1); color: var(--primary-hover); padding: 0.5rem 1rem; border-radius: var(--radius); border: 1px solid rgba(var(--primary-hover-rgb), 0.2);">React</span>
+                            <span style="background: rgba(var(--primary-hover-rgb), 0.1); color: var(--primary-hover); padding: 0.5rem 1rem; border-radius: var(--radius); border: 1px solid rgba(var(--primary-hover-rgb), 0.2);">Next.js</span>
                         </div>
-                        <div class="about-item">
-                            <h3>My Approach</h3>
-                            <p>I believe in clean, efficient code and user-centered design. I focus on creating responsive, accessible websites and applications that provide exceptional user experiences.</p>
-                        </div>
-                        <div class="about-item">
-                            <h3>What I Do</h3>
-                            <p>I specialize in building modern web applications using React, Next.js, and Node.js. I'm also experienced in database design, API development, and deployment strategies.</p>
-                        </div>
-                    </div>
-                    <div class="about-image">
-                        <img src="Images/IMG_3459-.png" alt="About Me">
+
                     </div>
                 </div>
             </div>
+            
+                
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-item">
+                        <h3>Core Expertise</h3>
+                        <p>With 2+ years focused on <strong>WordPress development</strong>, I specialize in:
+                            <br>• Custom WooCommerce solutions (checkout flows, payment gateways)
+                            <br>• PHP plugin development & theme customization
+                            <br>• WordPress troubleshooting (500 errors, plugin conflicts, malware removal)
+                            <br>• Technical SEO optimization (schema markup, speed enhancements)
+                        </p>
+                    </div>
+                    
+                    <div class="about-item">
+                        <h3>Full-Cycle Approach</h3>
+                        <p>I bridge development with digital marketing:
+                            <br>• Google Ads conversion tracking implementation
+                            <br>• Facebook Pixel integration & event setup
+                            <br>• Landing page optimization for paid traffic
+                            <br>• SEO audits & Core Web Vitals improvements
+                        </p>
+                    </div>
+                    
+                    <div class="about-item">
+                        <h3>Technical Focus</h3>
+                        <p>Expanding my toolkit with modern integrations:
+                            <br>• React-powered WordPress frontends
+                            <br>• Headless CMS architectures
+                            <br>• Marketing API automation (Google Ads/Facebook sync)
+                            <br>• A/B testing implementation
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="Images/IMG_3459-.png" alt="Dellah - Full-Stack Developer" 
+                         style="border: 2px solid rgba(var(--primary-rgb), 0.1); 
+                                border-radius: var(--radius);
+                                box-shadow: var(--shadow-md);">
+                </div>
+            </div>
+
+
+
+
         </section>
 
         <!-- Skills Section -->

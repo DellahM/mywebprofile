@@ -100,40 +100,41 @@ if (contactForm) {
     });
 }
 
-// Scroll reveal animation
-const revealElements = document.querySelectorAll('.section-header, .about-content, .skills-grid, .projects-grid, .contact-content');
+// Scroll reveal animation with IntersectionObserver
+const revealElements = document.querySelectorAll('.section-header, .card, .skills-grid, .projects-grid, .contact-content');
 
-const revealOnScroll = () => {
-    const windowHeight = window.innerHeight;
-    
-    revealElements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < windowHeight - elementVisible) {
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
-        }
-    });
+const observerOptions = {
+  threshold: 0.25,
+  rootMargin: '0px 0px -50px 0px'
 };
 
-// Set initial state for animations
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const element = entry.target;
+      
+      // Add staggered delays for cards
+      const delay = Array.from(element.parentNode.children).indexOf(element) * 0.15;
+      
+      element.style.transition = `
+        opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${delay}s,
+        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${delay}s
+      `;
+      
+      element.style.opacity = '1';
+      element.style.transform = 'translateY(0)';
+      
+      // Unobserve after animation
+      observer.unobserve(element);
+    }
+  });
+}, observerOptions);
+
+// Initialize observer for all elements
 revealElements.forEach(element => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(20px)';
-    element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  element.style.opacity = '0';
+  element.style.transform = 'translateY(20px)';
+  element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  revealObserver.observe(element);
 });
 
-// Add scroll event listener
-window.addEventListener('scroll', revealOnScroll);
-
-// Trigger once on load
-window.addEventListener('load', revealOnScroll);
-
-
-const skills = {
-    core: ["HTML5", "CSS3/Sass", "JavaScript (ES6+)", "PHP"],
-    WordPress: ["Custom Themes", "WooCommerce", "WP Rocket", "Security Hardening"],
-    modern: ["React (Learning)", "Next.js Basics", "REST APIs", "Git/GitHub"],
-    design: ["Figma", "Adobe XD", "UI/UX Principles"]
-  };
