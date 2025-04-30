@@ -466,6 +466,25 @@ p {
     }
 }
 
+
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr !important;
+        gap: var(--spacing-4) !important;
+    }
+    
+    .about-text {
+        padding-right: 0 !important;
+    }
+    
+    .about-image {
+        max-width: 80% !important;
+        margin: 0 auto !important;
+    }
+}
+
+
+
 /* Skills Section */
 .skills {
     background-color: var(--muted);
