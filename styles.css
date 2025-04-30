@@ -776,3 +776,41 @@ p {
 .contact-content {
     animation: fadeIn 0.8s ease-out;
 }
+
+
+
+/*media changes */
+/* Mobile Safari Fixes for Work Section */
+@media (max-width: 768px) {
+  #work {
+    position: relative;
+    overflow: visible;
+    height: auto;
+    padding: 2rem 0;
+  }
+
+  .work__container {
+    display: block !important;
+  }
+
+  .work__card {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 2rem;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .work__img {
+    mix-blend-mode: normal !important;
+    filter: none !important;
+  }
+
+  .work__content {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+
