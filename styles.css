@@ -779,3 +779,94 @@ p {
 
 
 
+
+/*styles addition*/
+
+/* Projects Section Mobile Responsive Fix */
+
+/* Add specific styles for Projects section that contains "My Recent Work" */
+#projects {
+  display: block;
+  width: 100%;
+  padding: 3rem 0;
+  overflow: hidden; /* Prevent content overflow */
+}
+
+/* Fix projects grid on mobile */
+.projects-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr; /* Single column for mobile */
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Make project cards fully visible on mobile */
+.project-card {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Prevent any content overflow */
+}
+
+/* Ensure images are properly sized and contained */
+.project-image {
+  width: 100%;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  max-height: 200px; /* Control image height on mobile */
+  object-fit: cover;
+}
+
+/* Add spacing around content */
+.project-content {
+  padding: 1rem;
+  flex: 1;
+}
+
+/* Make sure buttons don't overflow */
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Ensure section header is properly displayed */
+.section-header h2 {
+  font-size: 1.75rem; /* Slightly smaller heading on mobile */
+}
+
+/* Make sure the container is responsive */
+#projects .container {
+  padding: 0 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Media query for tablets */
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+  }
+  
+  .section-header h2 {
+    font-size: 2rem; /* Return to normal size */
+  }
+  
+  .project-image img {
+    max-height: 250px; /* Larger images on tablet */
+  }
+}
+
+/* Media query for desktop */
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr); /* Three columns for desktop */
+  }
+}
+
