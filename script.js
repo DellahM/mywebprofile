@@ -100,12 +100,13 @@ if (contactForm) {
     });
 }
 
-// Scroll reveal animation with IntersectionObserver
-const revealElements = document.querySelectorAll('.section-header, .card, .skills-grid, .projects-grid, .contact-content');
+// FIXED: Scroll reveal animation with IntersectionObserver
+const revealElements = document.querySelectorAll('.section-header, .card, .skills-grid, .project-card, .contact-content');
 
+// More mobile-friendly observer options
 const observerOptions = {
-  threshold: 0.25,
-  rootMargin: '0px 0px -50px 0px'
+  threshold: 0.1, // Lower threshold to trigger earlier
+  rootMargin: '0px 0px -10px 0px' // Less strict margin
 };
 
 const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -113,7 +114,15 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
     if (entry.isIntersecting) {
       const element = entry.target;
       
-      // Add staggered delays for cards
+      // Make all elements visible immediately on mobile
+      if (window.innerWidth < 768) {
+        element.style.opacity = '1';
+        element.style.transform = 'translateY(0)';
+        observer.unobserve(element);
+        return;
+      }
+      
+      // Add staggered delays for cards on larger screens
       const delay = Array.from(element.parentNode.children).indexOf(element) * 0.15;
       
       element.style.transition = `
@@ -130,11 +139,23 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
   });
 }, observerOptions);
 
-// Initialize observer for all elements
-revealElements.forEach(element => {
-  element.style.opacity = '0';
-  element.style.transform = 'translateY(20px)';
-  element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-  revealObserver.observe(element);
-});
+// Initialize all elements visibly on mobile first
+function initializeRevealElements() {
+  revealElements.forEach(element => {
+    // Make elements immediately visible on mobile
+    if (window.innerWidth < 768) {
+      element.style.opacity = '1';
+      element.style.transform = 'translateY(0)';
+    } else {
+      // Apply animation setup only on larger screens
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(20px)';
+      element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      revealObserver.observe(element);
+    }
+  });
+}
 
+// Run on page load and resize
+initializeRevealElements();
+window.addEventListener('resize', initializeRevealElements);
